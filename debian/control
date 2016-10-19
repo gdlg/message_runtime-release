@@ -1,0 +1,12 @@
+Source: ros-minimalist-message-runtime
+Section: misc
+Priority: extra
+Maintainer: Dirk Thomas <dthomas@osrfoundation.org>
+Build-Depends: debhelper (>= 9.0.0), ros-minimalist-catkin
+Homepage: http://ros.org/wiki/message_runtime
+Standards-Version: 3.9.2
+
+Package: ros-minimalist-message-runtime
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-minimalist-cpp-common, ros-minimalist-genpy, ros-minimalist-roscpp-serialization, ros-minimalist-roscpp-traits, ros-minimalist-rostime
+Description: Package modeling the run-time dependencies for language bindings of messages.
