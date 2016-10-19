@@ -1,3 +1,26 @@
+## message_runtime (minimalist) - 0.4.12-0
+
+The packages in the `message_runtime` repository were released into the `minimalist` distro by running `/home/greg/bloom-prefix/bin/bloom-release --rosdistro minimalist --track minimalist message_runtime --new-track` on `Wed, 19 Oct 2016 00:22:16 -0000`
+
+The `message_runtime` package was released.
+
+Version of package(s) in repository `message_runtime`:
+
+- upstream repository: https://github.com/ros/message_runtime.git
+- release repository: unknown
+- rosdistro version: `null`
+- old version: `null`
+- new version: `0.4.12-0`
+
+Versions of tools used:
+
+- bloom version: `0.5.22`
+- catkin_pkg version: `0.2.10`
+- rosdep version: `0.11.5`
+- rosdistro version: `0.4.7`
+- vcstools version: `0.1.39`
+
+
 ## message_runtime (kinetic) - 0.4.12-0
 
 The packages in the `message_runtime` repository were released into the `kinetic` distro by running `/usr/bin/bloom-release -r kinetic -t kinetic message_runtime` on `Wed, 09 Mar 2016 19:12:33 -0000`
