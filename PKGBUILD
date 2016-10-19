@@ -1,32 +1,38 @@
 # Script generated with Bloom
-pkgdesc="ROS - @(Description)"
-@[if Homepage and Homepage != '']url='@(Homepage)'@[end if]
+pkgdesc="ROS - Package modeling the run-time dependencies for language bindings of messages."
+url='http://ros.org/wiki/message_runtime'
 
-pkgname='@(Package)'
-pkgver='@(Version)'
-pkgrel='@(Pkgrel)'
+pkgname='ros-minimalist-message-runtime'
+pkgver='0.4.12'
+pkgrel='0'
 arch=('any')
-license=('@(License)')
+license=('BSD')
 
-makedepends=(@[for p in BuildDepends]'@p'@\n@[end for])
+makedepends=('ros-minimalist-catkin'
+)
 
-depends=(@[for p in Depends]'@p'@\n@[end for])
+depends=('ros-minimalist-cpp-common'
+'ros-minimalist-genpy'
+'ros-minimalist-roscpp-serialization'
+'ros-minimalist-roscpp-traits'
+'ros-minimalist-rostime'
+)
 
-conflicts=(@[for p in Conflicts]'@p'@\n@[end for])
-replaces=(@[for p in Replaces]'@p'@\n@[end for])
+conflicts=()
+replaces=()
 
-_dir=@(Name)
+_dir=message_runtime
 source=()
 md5sums=()
 
 prepare() {
-    cp -R $startdir/@(Name) $srcdir/@(Name)
+    cp -R $startdir/message_runtime $srcdir/message_runtime
 }
 
 build() {
   # Use ROS environment variables
   source /usr/share/ros-build-tools/clear-ros-env.sh
-  [ -f /opt/ros/@(ROSDistribution)/setup.bash ] && source /opt/ros/@(ROSDistribution)/setup.bash
+  [ -f /opt/ros/minimalist/setup.bash ] && source /opt/ros/minimalist/setup.bash
 
   # Create build directory
   [ -d ${srcdir}/build ] || mkdir ${srcdir}/build
@@ -39,7 +45,7 @@ build() {
   cmake ${srcdir}/${_dir} \
         -DCMAKE_BUILD_TYPE=Release \
         -DCATKIN_BUILD_BINARY_PACKAGE=ON \
-        -DCMAKE_INSTALL_PREFIX=/opt/ros/@(ROSDistribution) \
+        -DCMAKE_INSTALL_PREFIX=/opt/ros/minimalist \
         -DPYTHON_EXECUTABLE=/usr/bin/python2 \
         -DPYTHON_INCLUDE_DIR=/usr/include/python2.7 \
         -DPYTHON_LIBRARY=/usr/lib/libpython2.7.so \
